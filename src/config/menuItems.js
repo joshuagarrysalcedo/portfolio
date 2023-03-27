@@ -125,7 +125,7 @@ const getMenuItems = (props) => {
           leftIcon: <IsoIcon />,
         },
         {
-          value: '/toast_demo',
+          value: '/todo_list_application',
           visible: isAuthorised,
           primaryText: intl.formatMessage({
             id: 'todo',

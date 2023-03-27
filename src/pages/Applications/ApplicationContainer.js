@@ -21,21 +21,21 @@ import RateReviewIcon from "@mui/icons-material/RateReview";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import CodeHighlighter from "../../components/CodeHighlighter/CodeHighlighter";
 import React, {useState} from "react";
-import sourceCode from "./CounterApplication/sourceCode.txt";
+import PropTypes from "prop-types";
 function ApplicationContainer(props){
     const intl = useIntl()
-    const {title, descriptionID} = props
-    const [open, setOpen] = useState(false);
-    const [openCode, setOpenCode] = useState(false);
+    const {title, descriptionID, sourceCode, openApp, openSourceCode, ApplicationDialog} = props
+    const [open, setOpen] = useState(openApp);
+    const [openCode, setOpenCode] = useState(openSourceCode);
     const [rawText, setRawText] = useState("");
 
 
 
-    fetch(sourceCode)
+    /*fetch(sourceCode)
         .then(response => response.text())
-        .then(text => setRawText(text));
-    const handleStart = () => {
-        console.log("Open")
+        .then(text => setRawText(text));*/
+    const handleStart = (e) => {
+        e.preventDefault();
         setOpen(!open)
 
     }
@@ -45,26 +45,23 @@ function ApplicationContainer(props){
     return(
         <Page
             pageTitle={intl.formatMessage({
+                id: "sample",
                 defaultMessage: `${title}`,
             })}
         >
             <Box style={{display :"flex", flexDirection: "row", justifyContent: "center"}}>
                 <Card sx={{mt: "2rem", width: "50%", maxHeight: "25%"}}>
                     <CardHeader title={intl.formatMessage({
+                        id: "sample",
                         defaultMessage: `${title}`,
                     })}/>
                     <CardContent>
                         <Grid container row-spacing={2}>
                             <Grid item xs={12}> <Typography variant="body" paragraph={true} sx={{textIndent:"1rem"}}>{intl.formatMessage({id: `${descriptionID}`})}</Typography></Grid>
                             <Grid item xs={12} sx={{margin: "auto"}}>
-                                <Paper elevation={12} sx={{backgroundColor: "#001E3C", display:"flex", flexDirection: "row", justifyContent:"center", textAlign:"center" ,m: "auto", p:5}}>
-                                    <Button variant="contained" color={"primary"} startIcon={<LaunchIcon size={"lg"}/>} onClick={handleStart}>
-                                        `START ${title}`
-                                    </Button>
-                                    <CounterDialog
-                                        open={open}
-                                        onClose={()=> setOpen(!open)}
-                                    />
+                                <Paper elevation={12} sx={{backgroundColor: "#001E3C", display:"flex", flexDirection: "row" ,m: "auto", p:5}}>
+                                    {/* edit this*/}
+                                    <ApplicationDialog/>
                                 </Paper>
 
                             </Grid>
@@ -97,4 +94,18 @@ function ApplicationContainer(props){
             </Box>
         </Page>
     )
+
+
 }
+
+ApplicationContainer.propTypes  ={
+    title : PropTypes.string.isRequired,
+    descriptionID : PropTypes.string.isRequired,
+    /*sourceCode : PropTypes.string.isRequired,*/
+    openApp :  PropTypes.bool.isRequired,
+    /* openSourceCode: PropTypes.bool.isRequired,*/
+    ApplicationDialog : PropTypes.element.isRequired,
+    onClose: PropTypes.func.isRequired,
+}
+
+export default ApplicationContainer;

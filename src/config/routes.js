@@ -3,6 +3,7 @@ import React, { lazy } from 'react'
 import AuthorizedRoute from 'base-shell/lib/components/AuthorizedRoute'
 import UnauthorizedRoute from 'base-shell/lib/components/UnauthorizedRoute'
 import CounterApplication from "../pages/Applications/CounterApplication/CounterApplication";
+import TodoListApplication from "../pages/Applications/TodoListApplication/TodoListApplication";
 
 const SignIn = lazy(() => import('../pages/SignIn/SignIn'))
 
@@ -83,6 +84,15 @@ const routes = [
     element: (
         <AuthorizedRoute>
           <CounterApplication/>
+        </AuthorizedRoute>
+    )
+  },
+  {
+    path : '/todo_list_application',
+    exact: true,
+    element: (
+        <AuthorizedRoute>
+          <TodoListApplication/>
         </AuthorizedRoute>
     )
   },

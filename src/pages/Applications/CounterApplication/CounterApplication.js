@@ -23,7 +23,7 @@ import React, {useEffect, useState} from "react";
 import CounterDialog from "./CounterDialog";
 import CodeHighlighter from "../../../components/CodeHighlighter/CodeHighlighter";
 const emails = ['username@gmail.com', 'user02@gmail.com'];
-const sourceCode = require('./sourceCode.txt');
+/*const sourceCode = require('./sourceCode.txt');*/
 
 function CounterApplication() {
     const intl = useIntl()
@@ -34,10 +34,10 @@ function CounterApplication() {
 
 
 
-
+/*
   fetch(sourceCode)
       .then(response => response.text())
-      .then(text => setRawText(text));
+      .then(text => setRawText(text));*/
     const handleStart = () => {
         console.log("Open")
         setOpen(!open)
