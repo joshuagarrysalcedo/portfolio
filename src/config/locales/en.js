@@ -44,6 +44,22 @@ const messages = defineMessages({
   delete_account_dialog_message:
     'Your account will be deleted and you will lose all your data!',
   delete_account_dialog_action: 'Delete account',
+
+  //
+  apps : "Applications",
+  date_label: "Date",
+  description_label: "Description",
+
+  counter : "Simple Counter",
+  counter_desc : "Create a simple counter app that increments or decrements a number when a button is clicked.",
+  todo : "Todo List",
+  weather : "Weather API",
+  timer : "Simple Timer",
+  calculator : "Simple Calculator",
+  math_quiz: "Math Quiz",
+  img_gallery : "Image Gallery",
+  shopping_app : "Shopping Application"
+
 })
 
 export default messages

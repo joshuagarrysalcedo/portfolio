@@ -20,6 +20,15 @@ import {
   ViewList,
   Web,
 } from '@mui/icons-material'
+import IsoIcon from '@mui/icons-material/Iso';
+import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
+import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
+import TimerIcon from '@mui/icons-material/Timer';
+import CalculateIcon from '@mui/icons-material/Calculate';
+import QuizIcon from '@mui/icons-material/Quiz';
+import ImageIcon from '@mui/icons-material/Image';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AppsIcon from '@mui/icons-material/Apps';
 
 import allLocales from './locales'
 import allThemes from './themes'
@@ -100,6 +109,88 @@ const getMenuItems = (props) => {
       primaryText: intl.formatMessage({ id: 'home' }),
       leftIcon: <DashboardIcon />,
     },
+    // Applications
+    {
+      primaryText: intl.formatMessage({ id: 'apps', defaultMessage: 'Applications' }),
+      primaryTogglesNestedList: true,
+      leftIcon: <AppsIcon />,
+      nestedItems: [
+        {
+          value: '/counter_application',
+          visible: isAuthorised,
+          primaryText: intl.formatMessage({
+            id: 'counter',
+            defaultMessage: 'Simple Counter',
+          }),
+          leftIcon: <IsoIcon />,
+        },
+        {
+          value: '/toast_demo',
+          visible: isAuthorised,
+          primaryText: intl.formatMessage({
+            id: 'todo',
+            defaultMessage: 'Todo List',
+          }),
+          leftIcon: <PlaylistAddCheckIcon />,
+        },
+        {
+          value: '/filter_demo',
+          visible: isAuthorised,
+          primaryText: intl.formatMessage({
+            id: 'weather',
+            defaultMessage: 'Weather API',
+          }),
+          leftIcon: <ThunderstormIcon />,
+        },
+        {
+          value: '/list_page_demo',
+          visible: isAuthorised,
+          primaryText: intl.formatMessage({
+            id: 'timer',
+            defaultMessage: 'Simple Timer',
+          }),
+          leftIcon: <TimerIcon />,
+        },
+        {
+          value: '/tabs_demo',
+          visible: isAuthorised,
+          primaryText: intl.formatMessage({
+            id: 'calculator',
+            defaultMessage: 'Simple Calculator',
+          }),
+          leftIcon: <CalculateIcon />,
+        },
+        {
+          value: '/tabs_demo',
+          visible: isAuthorised,
+          primaryText: intl.formatMessage({
+            id: 'math_quiz',
+            defaultMessage: 'Math Quiz',
+          }),
+          leftIcon: <QuizIcon />,
+        },
+        {
+          value: '/tabs_demo',
+          visible: isAuthorised,
+          primaryText: intl.formatMessage({
+            id: 'img_gallery',
+            defaultMessage: 'Image Gallery',
+          }),
+          leftIcon: <ImageIcon />,
+        },
+        {
+          value: '/tabs_demo',
+          visible: isAuthorised,
+          primaryText: intl.formatMessage({
+            id: 'shopping_app',
+            defaultMessage: 'Shopping Application',
+          }),
+          leftIcon: <ShoppingCartIcon />,
+        },
+      ],
+    },
+
+
     {
       primaryText: intl.formatMessage({ id: 'demos', defaultMessage: 'Demos' }),
       primaryTogglesNestedList: true,

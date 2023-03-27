@@ -7,6 +7,7 @@
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.11",
+    "@mui/joy": "^5.0.0-alpha.71",
     "@mui/material": "^5.11.13",
     "base-shell": "^2.5.10",
     "intl": "^1.2.5",
@@ -14,6 +15,8 @@
     "lp-react-virtualized-auto-sizer-react-18": "^1.0.7",
     "material-ui-shell": "^3.4.9",
     "notistack": "^2.0.8",
+    "prismjs": "^1.29.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "^18.2.0",
@@ -48,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "any-text": "^1.2.0"
   }
 }
